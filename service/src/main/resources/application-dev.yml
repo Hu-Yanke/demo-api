@@ -1,0 +1,51 @@
+server:
+  port: 8080
+spring:
+  security:
+    user:
+      name: user
+      password: a123456
+logging:
+  path: ./logs
+  level:
+    com.zaxxer.hikari.HikariConfig: info
+    com.zaxxer.hikari.pool.HikariPool: info
+    org.apache.zookeeper.ClientCnxn: info
+    org.apache.curator.framework.recipes.cache.TreeCache: info
+    org.quartz.**: info
+    org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener: info
+datasource:
+  oracle:
+    jdbc-url: jdbc:oracle:thin:@192.168.22.235:1521:nettest
+    username: smkai
+    password: smkai96225
+    minimum-idle: 5
+    maximum-pool-size: 15
+    auto-commit: true
+    idle-timeout: 30000
+    max-lifetime: 1800000
+    connection-timeout: 30000
+    connection-test-query: SELECT 1 FROM DUAL
+    pool-name: DatebookHikariCP
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+  mysql:
+    jdbc-url: jdbc:mysql://localhost:3306/demo
+    username: root
+    password: 123456
+    minimum-idle: 5
+    maximum-pool-size: 15
+    auto-commit: true
+    idle-timeout: 30000
+    max-lifetime: 1800000
+    connection-timeout: 30000
+    connection-test-query: SELECT 1 FROM DUAL
+    pool-name: DatebookHikariCP
+    driver-class-name: com.mysql.jdbc.Driver
+fdfs:
+  so-timeout: 1500
+  connect-timeout: 600
+  tracker-list:
+    - 192.168.96.169:22122
+  pool:
+    max-total: 100
+    max-wait-millis: 60

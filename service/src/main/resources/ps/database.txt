@@ -1,0 +1,13 @@
+生成数据库相应依赖:
+
+1. 根据不同的数据库去/resources/datasourcebuild文件夹下寻找不同的数据库文件(mysql或oracle)
+
+2. 修改数据库配置文件
+2.1 修改: classPathEntry-location(例: D:/DataSource/mysql-connector-java-5.1.46.jar)
+2.2 数据库地址修改: jdbcConnection-connectionURL(例: jdbc:mysql://localhost:3306/demo)
+2.3 数据库用户修改: jdbcConnection-userId(例: root)
+2.4 数据库密码修改: jdbcConnection-password(例: 123456)
+2.5 在文件末尾的table标签中配置需要生成的表,tableName为数据库中表名,domainObjectName为项目中实体类类名
+
+3. 在IDEA右侧的maven窗口中(如果没有可以在IDEA上方的VIEW-Tool Windows-Maven打开)找到demo项目下的Plugins中的mybatis-generator,
+点击mybatis-generator:generate进行生成文件(注:生成前需要将mapper下的.xml文件删除)
