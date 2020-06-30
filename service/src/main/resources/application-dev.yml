@@ -40,7 +40,7 @@ datasource:
     connection-timeout: 30000
     connection-test-query: SELECT 1 FROM DUAL
     pool-name: DatebookHikariCP
-    driver-class-name: com.mysql.jdbc.Driver
+    driver-class-name: com.mysql.cj.jdbc.Driver
 fdfs:
   so-timeout: 1500
   connect-timeout: 600
